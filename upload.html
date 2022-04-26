@@ -1,0 +1,88 @@
+
+<html>
+  <head>
+    <title>Upload Documents - EZProof</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<h1 style="background-color: rgb(1, 0, 88);color: #ffffff;text-align: left;min-width: 100%;">      EZProof</h1>
+<div class="content">
+<a href="index.html"><p style="text-align: right;">Sign Out</p></a>
+<div class="text-right">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select...
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="info.html">Your Information</a>
+          <a class="dropdown-item" href="upload.html">Upload Document</a>
+          <a class="dropdown-item" href="remove.html">Remove Document</a>
+        </div>
+      </div></div></div>
+<h2 style="text-align: center;">Your Information</h2><div class="dropdown">
+    
+<div class="square">
+    <div class="float-container">
+
+        <div class="float-child">
+          <img id="output"/ style="height: 95%;width: 100%;">
+          <input type="file" accept="image/*" onchange="loadFile(event)">
+     </div>
+        
+        <div class="float-child1">
+          <img id="output1"/ style="height: 95%;width: 100%;">   
+          <input type="file" accept="image/*" onchange="loadFile1(event)" >
+        </div>
+        
+      </div>
+    <br>
+
+    <div class="float-child2">
+      <div class="text-center">
+      <button type="button" onclick="alertpop()" class="btn btn-secondary">Upload ID Card</button>
+</div>
+</div>
+    <div class="float-child3">
+      <div class="text-center">
+      <button type="button" onclick="alertpop()" class="btn btn-secondary">Upload CDC Verification Card</button>
+</div>
+</div>
+ </div>
+    </div>
+    </body></html>
+      <script>
+        var loadFile = function(event) {
+          var output = document.getElementById('output');
+          output.src = URL.createObjectURL(event.target.files[0]);
+          output.onload = function() {
+            URL.revokeObjectURL(output.src) // free memory
+          }
+        };
+      </script>
+      <script>
+        var loadFile1 = function(event) {
+          var output1 = document.getElementById('output1');
+          output1.src = URL.createObjectURL(event.target.files[0]);
+          output1.onload = function() {
+            URL.revokeObjectURL(output1.src) // free memory
+          }
+        };
+      </script>
+      <script>
+        function alertpop() {
+          alert("Document Uploaded Successfully");
+        }
+        </script>
